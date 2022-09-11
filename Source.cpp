@@ -27,19 +27,19 @@ int main() {
 	std::vector<std::thread> v;
 
 	// Releasing a couple
-	for (int i = 0; i < 5; ++i)
+	for (unsigned i = 0; i < 5; i++)
 		v.emplace_back(read);
 
-	for (int i = 0; i < 2; ++i)
+	for (unsigned i = 0; i < 2; i++)
 		v.emplace_back(write, i * 0.15);
 
-	for (int i = 0; i < 5; ++i)
+	for (unsigned i = 0; i < 5; i++)
 		v.emplace_back(read );
 
-	for (int i = 0; i < 2; ++i)
+	for (unsigned i = 0; i < 2; i++)
 		v.emplace_back(write, i * 0.15);
 
-	for (int i = 0; i < 5; ++i)
+	for (unsigned i = 0; i < 5; i++)
 		v.emplace_back(read);
 
 	std::for_each(v.begin(), v.end(), [](auto& t) {t.join(); });
