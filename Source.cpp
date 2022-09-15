@@ -42,5 +42,5 @@ int main() {
 	for (unsigned i = 0; i < 5; i++)
 		v.emplace_back(read);
 
-	std::for_each(v.begin(), v.end(), [](auto& t) {t.join(); });
+	std::for_each(v.begin(), v.end(), [](auto& v) {v.join(); });
 }
